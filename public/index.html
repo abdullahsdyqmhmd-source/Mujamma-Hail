@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b36"><link rel="manifest" href="/manifest.webmanifest">
+<title>مجمع هائل</title>
+<style>
+:root{--navy:#101b36;--navy2:#172747;--gold:#d8b45a;--paper:#f5f2e9;--muted:#aeb9ca}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:linear-gradient(145deg,#0b1429,#172747);color:#f8f6ef;min-height:100vh}
+header{padding:22px 16px;text-align:center;border-bottom:1px solid #d8b45a55;background:#0b1429cc}
+h1{margin:0;color:var(--gold);font-size:30px}header p{margin:8px 0 0;color:var(--muted)}
+main{max-width:1050px;margin:24px auto;padding:0 14px}.panel{background:#fff;color:#172033;border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 12px 35px #0003}
+.hidden{display:none!important}.gold{color:#a77c18}.muted{color:#667085}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:13px}
+.card{border:1px solid #e6dfce;border-radius:14px;padding:16px;background:#fff;min-height:125px}.card h3{margin:0 0 8px;color:#142344}.card p{margin:0;color:#667085;line-height:1.7;font-size:14px}
+button{border:0;border-radius:10px;background:#c49b3e;color:#101b36;font-weight:bold;padding:12px 16px;cursor:pointer;font-size:15px}
+button.secondary{background:#e9edf4;color:#172747}input,textarea,select{width:100%;padding:13px;border:1px solid #ccd3df;border-radius:10px;font:inherit;margin:7px 0 12px}textarea{min-height:120px}
+label{font-weight:bold;font-size:14px}nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}nav button{background:#263a5e;color:#fff}nav button.active{background:var(--gold);color:#101b36}
+.notice{background:#fff7df;border:1px solid #ead69b;padding:12px;border-radius:10px;color:#604b18;line-height:1.7}
+#answer{white-space:pre-wrap;line-height:1.8;background:#f5f7fa;padding:14px;border-radius:10px;min-height:70px}
+footer{text-align:center;color:#c2cada;padding:25px;font-size:13px}
+</style>
+</head>
+<body>
+<header><h1>مجمع هائل</h1><p>بيئة تعليمية تساعدك على الفهم والتعلّم والإنجاز</p></header>
+<main>
+<section id="siteGate" class="panel">
+<h2 class="gold">مرحباً بك في مجمع هائل</h2><p>أدخل رمز دخول المنصة للمتابعة.</p>
+<form id="siteForm"><label>رمز دخول المنصة</label><input id="sitePassword" type="password" required autocomplete="current-password"><button>دخول المنصة</button></form>
+<p id="siteError" class="muted"></p>
+</section>
+<section id="app" class="hidden">
+<nav id="nav">
+<button class="active" data-page="home">الرئيسية</button><button data-page="curriculum">المناهج اليمنية</button><button data-page="teacher">المعلم الذكي</button><button data-page="quiz">اختبر نفسك</button><button data-page="about">عن المنصة</button><button data-page="developer">قسم المطور</button>
+</nav>
+<section id="home" class="panel page"><h2 class="gold">أهلاً بك في مجمع هائل</h2><p>اختر القسم الذي تريد البدء منه.</p><div class="grid">
+<div class="card"><h3>المناهج اليمنية</h3><p>مساحة منظمة للصفوف والمواد من الأول الثانوي إلى الثالث الثانوي.</p></div>
+<div class="card"><h3>المعلم الذكي</h3><p>اطرح سؤالك واحصل على شرح ومساعدة تعليمية عند تفعيل خدمة الذكاء الاصطناعي.</p></div>
+<div class="card"><h3>اختبر نفسك</h3><p>أنشئ اختباراً تدريبياً أو تدرب على أسئلتك.</p></div>
+<div class="card"><h3>قسم المطور</h3><p>أدوات الإدارة والمساعدة الخاصة، محمية بكلمة مرور مستقلة.</p></div>
+</div></section>
+<section id="curriculum" class="panel page hidden"><h2 class="gold">المناهج اليمنية</h2><p>اختر الصف الدراسي. هذه نسخة تأسيسية؛ يجب إضافة الكتب والملفات التعليمية المعتمدة قبل اعتبار المحتوى مكتملًا.</p><div class="grid">
+<div class="card"><h3>الأول الثانوي</h3><p>مواد دراسية — أضف ملفات المنهج المعتمدة.</p></div><div class="card"><h3>الثاني الثانوي</h3><p>مواد دراسية — أضف ملفات المنهج المعتمدة.</p></div><div class="card"><h3>الثالث الثانوي</h3><p>مواد دراسية — أضف ملفات المنهج المعتمدة.</p></div>
+</div></section>
+<section id="teacher" class="panel page hidden"><h2 class="gold">المعلم الذكي</h2><p>اكتب سؤالاً دراسياً أو اطلب شرح موضوع.</p><textarea id="question" placeholder="اكتب سؤالك هنا..."></textarea><button id="ask">إرسال السؤال</button><div id="answer" style="margin-top:14px">سيظهر الرد هنا.</div></section>
+<section id="quiz" class="panel page hidden"><h2 class="gold">اختبر نفسك</h2><p>اكتب سؤالاً أو موضوعاً تريد التدرب عليه، ثم اطلب من المعلم الذكي إعداد أسئلة تدريبية.</p><textarea id="quizTopic" placeholder="مثال: قوانين الحركة في الفيزياء"></textarea><button id="makeQuiz">إنشاء أسئلة تدريبية</button><div id="quizAnswer" style="margin-top:14px" class="notice">سيتم إنشاء الأسئلة عند تفعيل خدمة الذكاء الاصطناعي.</div></section>
+<section id="about" class="panel page hidden"><h2 class="gold">عن المنصة</h2><p>مجمع هائل منصة تعليمية قيد التطوير، هدفها تسهيل الوصول إلى أدوات التعلم والمراجعة.</p><p><b>المطور:</b> <span class="gold">صديق محمد الحيدري</span></p><p><b>للاستفسار:</b> 775382957</p></section>
+<section id="developer" class="panel page hidden"><div id="devGate"><h2 class="gold">قسم المطور المحمي</h2><p>هذا القسم له كلمة مرور مستقلة عن رمز دخول المنصة.</p><form id="devForm"><label>كلمة مرور المطور</label><input id="devPassword" type="password" required autocomplete="current-password"><button>فتح قسم المطور</button></form><p id="devError" class="muted"></p></div>
+<div id="devTools" class="hidden"><h2 class="gold">أدوات المطور</h2><div class="grid">
+<div class="card"><h3>المساعد الشخصي</h3><p>مساعدة في تنظيم العمل والأفكار.</p></div><div class="card"><h3>حل الأسئلة بالصور</h3><p>يمكن إضافة رفع الصور وتحليلها في مرحلة تطوير لاحقة.</p></div><div class="card"><h3>إدارة المنصة</h3><p>إدارة المحتوى والإعدادات بعد ربط قاعدة بيانات.</p></div><div class="card"><h3>دفتر الملاحظات</h3><p>اكتب ملاحظتك واحفظها محلياً في هذا المتصفح.</p></div><div class="card"><h3>مختبر البرمجة</h3><p>مساحة لتجربة الأكواد وإضافة أدوات المطور.</p></div><div class="card"><h3>أدوات إضافية</h3><p>تلخيص الملفات، جدول الدراسة، متابعة المستوى، ومساعد اللغات — تُضاف وظائفها تدريجياً.</p></div>
+</div><label for="notes">دفتر الملاحظات</label><textarea id="notes" placeholder="اكتب ملاحظاتك..."></textarea><button id="saveNotes">حفظ الملاحظات على هذا الجهاز</button> <button class="secondary" id="devLogout">قفل قسم المطور</button></div></section>
+</section></main>
+<footer>مجمع هائل · المطور: صديق محمد الحيدري</footer>
+<script>
+const $=id=>document.getElementById(id);
+function showApp(){ $('siteGate').classList.add('hidden'); $('app').classList.remove('hidden'); }
+async function post(url,data){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});let j={};try{j=await r.json()}catch{};if(!r.ok)throw new Error(j.error||'تعذر تنفيذ الطلب');return j}
+$('siteForm').addEventListener('submit',async e=>{e.preventDefault();$('siteError').textContent='جارٍ التحقق...';try{await post('/api/login',{password:$('sitePassword').value});showApp();$('siteError').textContent=''}catch(err){$('siteError').textContent=err.message}});
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));$(b.dataset.page).classList.remove('hidden')}));
+$('devForm').addEventListener('submit',async e=>{e.preventDefault();$('devError').textContent='جارٍ التحقق...';try{await post('/api/dev-login',{password:$('devPassword').value});$('devGate').classList.add('hidden');$('devTools').classList.remove('hidden');$('devError').textContent=''}catch(err){$('devError').textContent=err.message}});
+$('devLogout').addEventListener('click',async()=>{try{await post('/api/dev-logout',{})}catch{}$('devTools').classList.add('hidden');$('devGate').classList.remove('hidden')});
+$('saveNotes').addEventListener('click',()=>{localStorage.setItem('mujamma_notes',$('notes').value);alert('حُفظت الملاحظات على هذا الجهاز')});
+$('notes').value=localStorage.getItem('mujamma_notes')||'';
+$('ask').addEventListener('click',async()=>{const q=$('question').value.trim();if(!q)return;$('answer').textContent='جارٍ التفكير...';try{const x=await post('/api/ai',{prompt:q});$('answer').textContent=x.answer}catch(e){$('answer').textContent=e.message}});
+$('makeQuiz').addEventListener('click',async()=>{const q=$('quizTopic').value.trim();if(!q)return;$('quizAnswer').textContent='جارٍ إعداد الأسئلة...';try{const x=await post('/api/ai',{prompt:'أنشئ اختباراً تدريبياً من 5 أسئلة مع الإجابات حول: '+q});$('quizAnswer').textContent=x.answer}catch(e){$('quizAnswer').textContent=e.message}});
+</script></body></html>
